@@ -1,8 +1,9 @@
 node_modules/
 bower_components/
+coverage/
 .sass-cache/
+.idea/
 .tmp/
 dist/
-src/app/**/*.js
-src/app/**/*.js.map
-.idea/
+
+typings/
