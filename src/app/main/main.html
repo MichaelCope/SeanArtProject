@@ -93,12 +93,12 @@
   <!--</div>-->
 <!--</md-toolbar>-->
 
-<div layout="row" class="layout-row">
+<div layout="row">
   <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2 md-closed md-locked-open" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" tabindex="-1" aria-hidden="false">
 
     <header class="nav-header">
       <a ng-href="/" class="docs-logo" href="/">
-        <img src="assets/images/baby.jpg" alt="">
+        <img src="assets/images/angular.png" alt="">
         <h1 class="docs-logotype md-heading">Angular Material</h1>
       </a>
     </header>
@@ -109,16 +109,80 @@
       </li>
     </ul>
 
-    <md-content flex="" role="navigation" class="flex">
+    <md-content flex role="navigation">
       FOO
     </md-content>
   </md-sidenav>
 
-  <div layout="column" tabindex="-1" role="main" flex class="layout-column flex" aria-hidden="false">
-    <!--<md-toolbar class="md-whiteframe-gkow-z1 site-content-toolbar">-->
-      <!---->
-    <!--</md-toolbar>-->
+  <div layout="column" tabindex="-1" role="main" flex>
+
     <acme-navbar creation-date="main.creationDate"></acme-navbar>
+    <md-content style="width: 100%; padding-top: 50px;" flex>
+    <section class="jumbotron">
+    <h1>Sean Cope</h1>
+    <p class="lead">
+    <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
+    Always a pleasure scaffolding your apps.
+    </p>
+    <md-button class="md-raised animated infinite" ng-class="main.classAnimation" ng-click="main.showToastr()">Splendid Toastr</md-button>
+    <p>
+    With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
+    </p>
+    </section>
+
+    <div class="techs" layout-align="center">
+    <md-card ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
+    <md-card-content>
+    <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
+    <h3 class="md-title">{{ awesomeThing.title }}</h3>
+    <p>{{ awesomeThing.description }}</p>
+    </md-card-content>
+    <div class="md-action-buttons">
+    <md-button ng-href="{{ awesomeThing.url }}">Website</md-button>
+    </div>
+    </md-card>
+    <md-card>
+    <img src="assets/images/baby.jpg" style="max-width: 200px; max-height: 200px;" class="md-card-image" alt="image caption">
+    <md-card-content>
+    <h2>Card headline</h2>
+    <p>Card content</p>
+    </md-card-content>
+    <md-card-footer>
+    Card footer
+    </md-card-footer>
+    </md-card>
+    <md-card>
+    <img src="assets/images/baby.jpg" class="md-card-image" alt="image caption">
+    <md-card-content>
+    <h2>Card headline</h2>
+    <p>Card content</p>
+    </md-card-content>
+    <md-card-footer>
+    Card footer
+    </md-card-footer>
+    </md-card>
+    <md-card>
+    <img src="assets/images/baby.jpg" class="md-card-image" alt="image caption">
+    <md-card-content>
+    <h2>Card headline</h2>
+    <p>Card content</p>
+    </md-card-content>
+    <md-card-footer>
+    Card footer
+    </md-card-footer>
+    </md-card>
+    <md-card>
+    <img src="assets/images/baby.jpg" class="md-card-image" alt="image caption">
+    <md-card-content>
+    <h2>Card headline</h2>
+    <p>Card content</p>
+    </md-card-content>
+    <md-card-footer>
+    Card footer
+    </md-card-footer>
+    </md-card>
+    </div>
+    </md-content>
   </div>
 
 </div>
