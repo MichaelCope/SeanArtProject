@@ -23,6 +23,6 @@ module seanArtProject {
     .constant('malarkey', malarkey)
     .constant('moment', moment)
     //.run(runBlock)
-    .controller('MainController', MainController)
+    .controller(MainController.controllerName, MainController)
     .directive('acmeNavbar', acmeNavbar)
 }

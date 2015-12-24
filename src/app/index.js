@@ -15,7 +15,7 @@ var seanArtProject;
     ])
         .constant('malarkey', malarkey)
         .constant('moment', moment)
-        .controller('MainController', main_controller_1.MainController)
+        .controller(main_controller_1.MainController.controllerName, main_controller_1.MainController)
         .directive('acmeNavbar', navbar_directive_1.acmeNavbar);
 })(seanArtProject || (seanArtProject = {}));
 //# sourceMappingURL=index.js.map

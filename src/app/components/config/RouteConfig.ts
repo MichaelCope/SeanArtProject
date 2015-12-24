@@ -1,5 +1,5 @@
 /// <reference path="../../tsd.d.ts" />
-
+import {MainController} from '../../main/main.controller';
 class RouteConfiguration {
   public static $inject = ["$stateProvider", "$urlRouterProvider"];
 
@@ -9,8 +9,8 @@ class RouteConfiguration {
       .state('home', {
         url: '/',
         templateUrl: 'app/main/main.html',
-        controller: 'MainController',
-        controllerAs: 'main'
+        controller: MainController.controllerName,
+        controllerAs: MainController.controllerAs
       });
 
     urlRouterProvider.otherwise('/');

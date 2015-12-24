@@ -1,12 +1,13 @@
 /// <reference path="../../tsd.d.ts" />
+var main_controller_1 = require('../../main/main.controller');
 var RouteConfiguration = (function () {
     function RouteConfiguration(stateProvider, urlRouterProvider) {
         stateProvider
             .state('home', {
             url: '/',
             templateUrl: 'app/main/main.html',
-            controller: 'MainController',
-            controllerAs: 'main'
+            controller: main_controller_1.MainController.controllerName,
+            controllerAs: main_controller_1.MainController.controllerAs
         });
         urlRouterProvider.otherwise('/');
     }
