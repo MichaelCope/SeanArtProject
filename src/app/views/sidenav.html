@@ -21,11 +21,12 @@
   </div>
   <md-content class="scrollable-nav-content">
     <md-list>
-      <md-list-item ng-repeat="user in mainCtrl.users | filter:mainCtrl.searchText | orderBy:'name'">
+      <!-- | filter:mainCtrl.searchText-->
+      <md-list-item ng-repeat="project in mainCtrl.artProjects | orderBy:'id'">
         <md-button ng-click="mainCtrl.selectUser(user)" 
                    ng-class="{'selected': user === mainCtrl.selected }">
-          <md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>
-          {{user.name}}
+          <img ng-src="{{project.avatarUrl}}" class="avatar">
+          {{project.projectName}}
         </md-button>
       </md-list-item>
     </md-list>

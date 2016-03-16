@@ -3,7 +3,9 @@
 class IArtProject {
     constructor(public projectId: number,
                 public projectName: string,
+                public avatarUrl: string,
                 public createDate: Date,
+                public description: string,
                 public imgUrls: string[]){}
 } 
 
