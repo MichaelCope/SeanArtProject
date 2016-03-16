@@ -9,7 +9,7 @@
       md-search-text="mainCtrl.searchText"
       md-items="item in mainCtrl.artProjects | filter:mainCtrl.searchText"
       md-item-text="item.projectName"
-      md-min-length="3"
+      md-min-length="2"
       placeholder="filter">
       <md-item-template>
         <span md-highlight-text="mainCtrl.searchText" md-highlight-flags="^i">{{item.projectName}}</span>
@@ -21,8 +21,7 @@
   </div>
   <md-content class="scrollable-nav-content">
     <md-list>
-      <!-- | filter:mainCtrl.searchText-->
-      <md-list-item ng-repeat="project in mainCtrl.artProjects | orderBy:'id'">
+      <md-list-item ng-repeat="project in mainCtrl.artProjects | orderBy:'id' | filter:mainCtrl.searchText">
         <md-button ng-click="mainCtrl.selectProject(project)"
                    ng-class="{'selected': user === mainCtrl.selectedProject }">
           <img ng-src="{{project.avatarUrl}}" class="avatar avatar-small">
@@ -31,7 +30,4 @@
       </md-list-item>
     </md-list>
   </md-content>
-  <md-button class="md-fab md-fab-bottom-right" ng-click="mainCtrl.addUser($event)">
-    <ng-md-icon icon="add" ng-click="mainCtrl.addUser($event)"></ng-md-icon>
-  </md-button>
-</md-sidenav>
+ </md-sidenav>
