@@ -1,3 +1,5 @@
+/// <reference path="../../tsd.d.ts" />
+
 /** @ngInject */
 export function acmeNavbar(): angular.IDirective {
 

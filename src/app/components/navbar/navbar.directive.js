@@ -1,3 +1,4 @@
+/// <reference path="../../tsd.d.ts" />
 /** @ngInject */
 function acmeNavbar() {
     return {

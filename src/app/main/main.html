@@ -1,72 +1,14 @@
 <div layout="row">
-  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2 md-closed md-locked-open" md-component-id="left"
-              md-is-locked-open="$mdMedia('gt-sm')" tabindex="-1" aria-hidden="false">
+    <div ng-include="'../../app/main/sidenav.html'" layout="vertical"></div>
 
-    <header class="nav-header">
-      <a ng-href="/" class="docs-logo" href="/">
-        <img src="assets/images/angular.png" alt="">
-        <h1 class="md-heading" style="color: white!important;">Portfolio</h1>
-      </a>
-    </header>
-
-    <ul class="skip-links">
-      <li class="md-whiteframe-z2">
-        <a class="md-button md-ink-ripple"  ng-click="focusMainContent($event)" href="#"><span
-          class="ng-scope">Drawings</span></a>
-      </li>
-      <li class="md-whiteframe-z2">
-        <a class="md-button md-ink-ripple" ng-click="focusMainContent($event)" href="#"><span
-          class="ng-scope">Paintings</span></a>
-      </li>
-      <li class="md-whiteframe-z2">
-        <a class="md-button md-ink-ripple" ng-click="focusMainContent($event)" href="#"><span
-        class="ng-scope">Instagram</span></a>
-      </li>
-    </ul>
-
-    <!--<md-content flex role="navigation">-->
-      <!--Portfolio-->
-    <!--</md-content>-->
-  </md-sidenav>
-
-  <div layout="column" tabindex="-1" role="main" flex>
-
-    <acme-navbar creation-date="mainCtrl.creationDate"></acme-navbar>
-    <md-content style="width: 100%; padding-top: 50px;" flex>
-      <section class="jumbotron mainBG">
-        <h1>Sean Cope</h1>
-        <p class="lead">
-          <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-          Always a pleasure scaffolding your apps.
-        </p>
-        <md-button class="md-raised animated infinite" ng-class="mainCtrl.classAnimation" ng-click="mainCtrl.showToastr()">
-          Splendid Toastr
-        </md-button>
-        <p>
-          With ♥ thanks to the contributions of
-          <acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-        </p>
-      </section>
-
-      <div class="techs" layout-align="center">
-        <md-card ng-repeat="drawing in mainCtrl.mainDrawings">
-          <md-card-content>
-            <h3 class="md-title">{{ drawing.title }}</h3>
-          </md-card-content>
-          <img ng-src="assets/drawings/{{ drawing.fileName}}" alt="{{ drawing.title }}">
-
-          <md-card-footer>
-            <!--Created: {{ drawing.creationDate | date:'short'}}-->
-            <p>{{ drawing.description }}</p>
-            <div class="md-action-buttons">
-              <md-button ng-href="">Expand</md-button>
-            </div>
-          </md-card-footer>
-        </md-card>
+    <div layout="column" flex id="wrapper">
+        <div ng-include="'../../app/main/toolbar-header.html'"></div>
 
 
-      </div>
-    </md-content>
-  </div>
+        <md-content style="width: 100%; padding-top: 50px;" flex>
+
+
+        </md-content>
+    </div>
 
 </div>
