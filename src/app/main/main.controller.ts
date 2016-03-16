@@ -1,7 +1,8 @@
 /// <reference path="../tsd.d.ts" />
 
-import DrawingCard from './DrawingCard';
-import IArtProject from '../models/IArtProject'
+import IArtProject  from '../models/IArtProject';
+import IDrawing     from '../models/IDrawing';
+import {DialogController} from "./dialogController";
 
 export class MainController {
 
@@ -38,6 +39,7 @@ export class MainController {
                 private $mdSidenav: ng.material.ISidenavService,
                 private $mdToast: ng.material.IToastService,
                 private $mdDialog: ng.material.IDialogService,
+                private $mdMedia: ng.material.IMedia,
                 private $mdBottomSheet: ng.material.IBottomSheetService) {
 
         this.artProjects = this.populateArtProjects();
@@ -54,6 +56,21 @@ export class MainController {
         this.$mdSidenav('left').toggle();
     }
 
+    public expandDrawing($event, drawing: IDrawing): void{
+        var useFullScreen = (this.$mdMedia('sm') || this.$mdMedia('xs'));
+
+        this.$mdDialog.show({
+            templateUrl: '../../app/views/expandedDrawing.html',
+            parent: angular.element(document.body),
+            targetEvent: $event,
+            locals: { drawing: drawing },
+            controller: DialogController,
+            controllerAs: DialogController.controllerAs,
+            clickOutsideToClose:true,
+            fullscreen: useFullScreen
+        });
+    }
+
     private populateArtProjects(): IArtProject[] {
         let result: IArtProject[] = [];
         //utility knife
@@ -63,7 +80,7 @@ export class MainController {
         let desc:string = "Design a knife that improves the package opening experience.";
         let path:string =  "/assets/drawings/utilityknife/";
         let avatar:string = "knifeAvatar.png";
-        result.push(new IArtProject(id, name, path + avatar, date, desc, [path + "14.jpg", path + "15.jpg", path + "16.jpg"]));
+        result.push(new IArtProject(id, name, path + avatar, date, desc, [new IDrawing(path + "14.jpg", "Styling"), new IDrawing(path + "15.jpg", "Taken Apart"), new IDrawing(path + "16.jpg", "Finished Pieces")]));
         //shoes
         id = 2;
         name = "Sneaker Design";
@@ -71,7 +88,7 @@ export class MainController {
         desc = "Design a sneaker influenced by Dieter Rams.";
         path = "/assets/drawings/shoes/";
         avatar = "shoeAvi.png";
-        result.push(new IArtProject(id, name, path + avatar, date, desc, [path + "shoe1.jpg", path + "shoe2.jpg", path + "shoe3.jpg"]));
+        result.push(new IArtProject(id, name, path + avatar, date, desc, [new IDrawing(path + "shoe1.jpg", "View 1"), new IDrawing(path + "shoe2.jpg", "View 2"), new IDrawing(path + "shoe3.jpg", "View 3")]));
         //art supplies
         //Verve Markers - Winter 2015 - Design a more intuitive marker experience.
         id = 2;
@@ -80,7 +97,7 @@ export class MainController {
         desc = "Design a more intuitive marker experience.";
         path = "/assets/drawings/markers/";
         avatar = "markerAvi.png";
-        result.push(new IArtProject(id, name, path + avatar, date, desc, [path + "2.jpg", path + "3.jpg", path + "4.jpg", path + "5.jpg"]));
+        result.push(new IArtProject(id, name, path + avatar, date, desc, [new IDrawing(path + "2.jpg", "Color Varieties"), new IDrawing(path + "3.jpg", "Features"), new IDrawing(path + "4.jpg", "Mock Ups"), new IDrawing(path + "5.jpg", "Renderings")]));
         //misc
 
         return result;

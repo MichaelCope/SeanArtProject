@@ -1,6 +1,7 @@
 /// <reference path="tsd.d.ts" />
 var ConfigModule = require("./components/config/ConfigModule");
 var main_controller_1 = require('./main/main.controller');
+var dialogController_1 = require("./main/dialogController");
 var seanArtProject;
 (function (seanArtProject) {
     'use strict';
@@ -16,6 +17,7 @@ var seanArtProject;
     ])
         .constant('moment', moment)
         .controller(main_controller_1.MainController.controllerName, main_controller_1.MainController)
+        .controller(dialogController_1.DialogController.controllerName, dialogController_1.DialogController)
         .config(function ($mdIconProvider, $mdThemingProvider) {
         $mdIconProvider
             .defaultIconSet('./assets/svg/avatars.svg', 128)

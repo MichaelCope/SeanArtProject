@@ -10,13 +10,13 @@
 <p ng-if="!mainCtrl.selectedProject.imgUrls.length">No drawings for {{mainCtrl.selectedProject.projectName}}, yet.</p>
 <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
 
-        <md-card ng-repeat="img in mainCtrl.selectedProject.imgUrls">
+        <md-card ng-repeat="drawing in mainCtrl.selectedProject.drawings">
             <md-card-content>
-                <h3>Title</h3>
-                <img ng-src="{{img}}" class="avatar-large md-card-image">
+                <h3>{{drawing.title}}</h3>
+                <img ng-src="{{drawing.url}}" class="avatar-large md-card-image">
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
-                <md-button ng-click="mainCtrl.removeNote(note)">Enlarge</md-button>
+                <md-button ng-click="mainCtrl.expandDrawing($event, drawing)">Enlarge</md-button>
             </md-card-actions>
         </md-card>
 

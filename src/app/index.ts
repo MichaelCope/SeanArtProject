@@ -3,6 +3,7 @@
 import ConfigModule = require("./components/config/ConfigModule");
 
 import { MainController } from './main/main.controller';
+import {DialogController} from "./main/dialogController";
 
 
 declare var moment: moment.MomentStatic;
@@ -23,6 +24,7 @@ module seanArtProject {
     .constant('moment', moment)
     //.run(runBlock)
     .controller(MainController.controllerName, MainController)
+    .controller(DialogController.controllerName, DialogController)
       .config(($mdIconProvider: angular.material.IIconProvider,
                $mdThemingProvider: angular.material.IThemingProvider) => {
         $mdIconProvider
