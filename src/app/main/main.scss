@@ -1,18 +1,27 @@
 .avatar {
   position: relative;
-  max-width: 128px;
-  max-height: 128px;
+  max-width: 256px;
+  max-height: 256px;
   border: 1px solid #ddd;
   border-radius: 50%;
   display: inline-block;
   overflow: hidden;
   margin: 0px;
   vertical-align: middle;
+}
+.avatar-large {
+  max-width: 356px!important;
+  max-height: 356px!important;
+}
+.avatar-small {
+  max-width: 128px!important;
+  max-height: 128px!important;
   zoom:0.70;
   transform: translateZ(0);
   -webkit-transform: scale(0.70);
   -moz-transform:scale(0.70);
 }
+
 .ng-scope { height: 100%; }
 
 html, body {
@@ -24,14 +33,16 @@ html, body {
 }
 
 md-toolbar h1 {
-  font-size: 1.250em;
-  font-weight: 400;
+  color: #fff!important;
+  font-size: 1.50em;
+  font-weight: 500;
   margin: auto
 }
 
 md-toolbar .md-toolbar-tools h1 {
-  font-size: 1.250em;
-  font-weight: 400;
+  color: #fff!important;
+  font-size: 1.50em;
+  font-weight: 500;
 }
 
 md-list .md-button {

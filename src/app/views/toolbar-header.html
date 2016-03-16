@@ -1,10 +1,10 @@
 <md-toolbar>
   <div class="md-toolbar-tools">
-    <md-button hide-gt-sm ng-click="vm.toggleSideNav()" class="md-icon-button">
+    <md-button hide-gt-sm ng-click="mainCtrl.toggleSideNav()" class="md-icon-button">
        <md-icon md-svg-icon="menu"></md-icon>
     </md-button>
     <h1>
-      Contact Manager
+      Sean Cope Art
     </h1>
     <md-fab-speed-dial
       md-direction="down"
@@ -16,12 +16,12 @@
       </md-fab-trigger>
       <md-fab-actions>
         <md-button class="md-fab md-raised md-mini"
-                   ng-click="vm.showContactOptions($event)">
+                   ng-click="mainCtrl.showContactOptions($event)">
           <ng-md-icon icon="face"></ng-md-icon>
           <md-tooltip md-direction="left">Contact</md-tooltip>
         </md-button>
         <md-button class="md-fab md-raised md-mini"
-                   ng-click="vm.clearNotes($event)">
+                   ng-click="mainCtrl.clearNotes($event)">
           <ng-md-icon icon="clear_all"></ng-md-icon>
           <md-tooltip md-direction="left">Clear all notes</md-tooltip>
         </md-button>

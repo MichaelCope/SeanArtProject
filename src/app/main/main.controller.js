@@ -10,9 +10,18 @@ var MainController = (function () {
         this.$mdToast = $mdToast;
         this.$mdDialog = $mdDialog;
         this.$mdBottomSheet = $mdBottomSheet;
+        this.selectedProject = null;
+        this.searchText = "";
         this.artProjects = this.populateArtProjects();
         this.$log.debug('constructed');
     }
+    MainController.prototype.selectProject = function (project) {
+        console.log(project);
+        this.selectedProject = project;
+    };
+    MainController.prototype.toggleSideNav = function () {
+        this.$mdSidenav('left').toggle();
+    };
     MainController.prototype.populateArtProjects = function () {
         var result = [];
         //utility knife

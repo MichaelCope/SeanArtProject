@@ -4,15 +4,20 @@ import DrawingCard from './DrawingCard';
 import IArtProject from '../models/IArtProject'
 
 export class MainController {
-    public classAnimation:string;
-    public creationDate:number;
-
-
-    //private mainDrawings:DrawingCard[] = [];
-    private artProjects: IArtProject[];
 
     public static controllerName = "MainController";
     public static controllerAs = "mainCtrl";
+
+    //public classAnimation:string;
+    //public creationDate:number;
+
+
+    //private mainDrawings:DrawingCard[] = [];
+    public artProjects: IArtProject[];
+    public selectedProject: IArtProject = null;
+    public searchText: string = "";
+
+
 
     public static $inject = [
         '$scope',
@@ -38,6 +43,15 @@ export class MainController {
         this.artProjects = this.populateArtProjects();
 
         this.$log.debug('constructed');
+    }
+
+    public selectProject(project: IArtProject): void {
+        console.log(project);
+        this.selectedProject = project;
+    }
+
+    public toggleSideNav() : void {
+        this.$mdSidenav('left').toggle();
     }
 
     private populateArtProjects(): IArtProject[] {

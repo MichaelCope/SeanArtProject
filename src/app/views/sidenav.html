@@ -7,12 +7,12 @@
   <div layout-padding>
     <md-autocomplete
       md-search-text="mainCtrl.searchText"
-      md-items="item in mainCtrl.users | filter:mainCtrl.searchText"
-      md-item-text="item.name"
+      md-items="item in mainCtrl.artProjects | filter:mainCtrl.searchText"
+      md-item-text="item.projectName"
       md-min-length="3"
       placeholder="filter">
       <md-item-template>
-        <span md-highlight-text="mainCtrl.searchText" md-highlight-flags="^i">{{item.name}}</span>
+        <span md-highlight-text="mainCtrl.searchText" md-highlight-flags="^i">{{item.projectName}}</span>
       </md-item-template>
       <md-not-found>
         No user matching "{{mainCtrl.searchText}}" were found.          
@@ -23,9 +23,9 @@
     <md-list>
       <!-- | filter:mainCtrl.searchText-->
       <md-list-item ng-repeat="project in mainCtrl.artProjects | orderBy:'id'">
-        <md-button ng-click="mainCtrl.selectUser(user)" 
-                   ng-class="{'selected': user === mainCtrl.selected }">
-          <img ng-src="{{project.avatarUrl}}" class="avatar">
+        <md-button ng-click="mainCtrl.selectProject(project)"
+                   ng-class="{'selected': user === mainCtrl.selectedProject }">
+          <img ng-src="{{project.avatarUrl}}" class="avatar avatar-small">
           {{project.projectName}}
         </md-button>
       </md-list-item>

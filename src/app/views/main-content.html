@@ -1,0 +1,23 @@
+<md-content>
+    <div ng-if="!mainCtrl.selectedProject">
+        <h2>Please select a project</h2>
+    </div>
+    <h2>{{mainCtrl.selectedProject.projectName}}</h2>
+</md-content>
+<img class="avatar" ng-src="{{mainCtrl.selectedProject.avatarUrl}}">
+<h2>{{mainCtrl.selectedProject.createDate | date: 'MMMM, yyyy'}}</h2>
+
+<p ng-if="!mainCtrl.selectedProject.imgUrls.length">No drawings for {{mainCtrl.selectedProject.projectName}}, yet.</p>
+<md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
+
+        <md-card ng-repeat="img in mainCtrl.selectedProject.imgUrls">
+            <md-card-content>
+                <h3>Title</h3>
+                <img ng-src="{{img}}" class="avatar-large md-card-image">
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button ng-click="mainCtrl.removeNote(note)">Enlarge</md-button>
+            </md-card-actions>
+        </md-card>
+
+</md-content>  
