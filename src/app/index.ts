@@ -3,10 +3,8 @@
 import ConfigModule = require("./components/config/ConfigModule");
 
 import { MainController } from './main/main.controller';
-import { acmeNavbar } from '../app/components/navbar/navbar.directive';
 
 
-declare var malarkey: any;
 declare var moment: moment.MomentStatic;
 
 module seanArtProject {
@@ -17,12 +15,26 @@ module seanArtProject {
     'ngResource',
     'ui.router',
     'ngMaterial',
+    'ngMdIcons',
+    'ngMessages',
     'toastr',
     ConfigModule.ModuleName,
     ])
-    .constant('malarkey', malarkey)
     .constant('moment', moment)
     //.run(runBlock)
     .controller(MainController.controllerName, MainController)
-    .directive('acmeNavbar', acmeNavbar)
+      .config(($mdIconProvider: angular.material.IIconProvider,
+               $mdThemingProvider: angular.material.IThemingProvider) => {
+        $mdIconProvider
+            .defaultIconSet('./assets/svg/avatars.svg'          , 128)
+            .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+            .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+            .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+            .icon("phone"      , "./assets/svg/phone.svg"       , 512)
+            .icon('menu',        './assets/svg/menu.svg'        , 24);
+
+        $mdThemingProvider.theme('default')
+            .primaryPalette('light-blue')
+            .accentPalette('red');
+      });
 }

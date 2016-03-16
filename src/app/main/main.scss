@@ -1,34 +1,3 @@
-.nav-header {
-  background-color: #106CC8;
-  background: linear-gradient(#185694, #106cc8);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #185694), color-stop(1, #106cc8));
-  background: -webkit-linear-gradient(top, #185694 0%, #106cc8 100%);
-  background: -moz-linear-gradient(top, #185694 0%, #106cc8 100%);
-  background: linear-gradient(top, #185694 0%, #106cc8 100%);
-  border-bottom: 1px solid #267ED5;
-  flex-shrink: 0;
-  z-index: 2;
-}
-.docs-logo {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 0 16px;
-  margin: 0 auto;
-}
-.docs-logo:focus {
-  outline: none;
-}
-.docs-logo > img {
-  height: 150px;
-  width: auto;
-  display: block;
-  transform-origin: 50% 0;
-  transform: scale(1.2);
-}
-
-
 .avatar {
   position: relative;
   max-width: 128px;
@@ -43,4 +12,72 @@
   transform: translateZ(0);
   -webkit-transform: scale(0.70);
   -moz-transform:scale(0.70);
+}
+.ng-scope { height: 100%; }
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+md-toolbar h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+  margin: auto
+}
+
+md-toolbar .md-toolbar-tools h1 {
+  font-size: 1.250em;
+  font-weight: 400;
+}
+
+md-list .md-button {
+  color: inherit;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+md-list .md-button.selected {
+  color: #03a9f4;
+}
+
+md-sidenav  md-list {
+  padding: 0px 0px 8px 0px;
+}
+
+#content  {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+
+#content .avatar {
+  margin-top: 10px;
+}
+
+
+.scrollable-nav-content {
+  position: absolute;
+  top: 136px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  overflow: auto;
+}
+
+md-bottom-sheet  md-icon {
+  margin-right:20px;
+}
+
+span.name {
+  font-weight: bold;
+  font-size:1.1em;
+  padding-left:5px;
+}
+
+.date-row {
+  margin: 16px 0px;
 }
