@@ -1,3 +1,4 @@
+"use strict";
 var IArtProject = (function () {
     function IArtProject(projectId, projectName, avatarUrl, createDate, description, drawings) {
         this.projectId = projectId;
@@ -8,6 +9,6 @@ var IArtProject = (function () {
         this.drawings = drawings;
     }
     return IArtProject;
-})();
+}());
 exports.default = IArtProject;
 //# sourceMappingURL=IArtProject.js.map

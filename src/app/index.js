@@ -1,4 +1,5 @@
 /// <reference path="tsd.d.ts" />
+"use strict";
 var ConfigModule = require("./components/config/ConfigModule");
 var main_controller_1 = require('./main/main.controller');
 var dialogController_1 = require("./main/dialogController");
@@ -26,7 +27,7 @@ var seanArtProject;
             .icon("twitter", "./assets/svg/twitter.svg", 512)
             .icon("phone", "./assets/svg/phone.svg", 512)
             .icon('menu', './assets/svg/menu.svg', 24);
-        $mdThemingProvider.theme('default').dark()
+        $mdThemingProvider.theme('default')
             .primaryPalette('light-blue')
             .accentPalette('red');
     });

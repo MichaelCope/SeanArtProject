@@ -1,4 +1,5 @@
 /// <reference path="../../tsd.d.ts" />
+"use strict";
 var RouteConfiguration = require("./RouteConfig");
 exports.ModuleName = "Components.Config";
 angular.module(exports.ModuleName, [])

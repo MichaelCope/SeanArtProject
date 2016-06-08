@@ -1,4 +1,5 @@
 /// <reference path="../tsd.d.ts" />
+"use strict";
 var DialogController = (function () {
     function DialogController($scope, $mdDialog, drawing) {
         this.$scope = $scope;
@@ -13,6 +14,6 @@ var DialogController = (function () {
     DialogController.controllerAs = "dgCtrl";
     DialogController.$inject = ['$scope', '$mdDialog', 'drawing'];
     return DialogController;
-})();
+}());
 exports.DialogController = DialogController;
 //# sourceMappingURL=dialogController.js.map

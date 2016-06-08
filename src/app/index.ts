@@ -22,7 +22,6 @@ module seanArtProject {
     ConfigModule.ModuleName,
     ])
     .constant('moment', moment)
-    //.run(runBlock)
     .controller(MainController.controllerName, MainController)
     .controller(DialogController.controllerName, DialogController)
       .config(($mdIconProvider: angular.material.IIconProvider,
@@ -35,7 +34,7 @@ module seanArtProject {
             .icon("phone"      , "./assets/svg/phone.svg"       , 512)
             .icon('menu',        './assets/svg/menu.svg'        , 24);
 
-        $mdThemingProvider.theme('default').dark()
+        $mdThemingProvider.theme('default')
             .primaryPalette('light-blue')
             .accentPalette('red');
       });

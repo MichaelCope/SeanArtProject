@@ -7,7 +7,7 @@
 <img class="avatar" ng-src="{{mainCtrl.selectedProject.avatarUrl}}">
 <h2>{{mainCtrl.selectedProject.createDate | date: 'MMMM, yyyy'}}</h2>
 
-<p ng-if="!mainCtrl.selectedProject.imgUrls.length">No drawings for {{mainCtrl.selectedProject.projectName}}, yet.</p>
+<p ng-if="mainCtrl.selectedProject.drawings.length < 1">No drawings for {{mainCtrl.selectedProject.projectName}}, yet.</p>
 <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
 
         <md-card ng-repeat="drawing in mainCtrl.selectedProject.drawings">

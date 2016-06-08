@@ -1,3 +1,4 @@
+"use strict";
 /// <reference path="../../tsd.d.ts" />
 var main_controller_1 = require('../../main/main.controller');
 var RouteConfiguration = (function () {
@@ -13,6 +14,6 @@ var RouteConfiguration = (function () {
     }
     RouteConfiguration.$inject = ["$stateProvider", "$urlRouterProvider"];
     return RouteConfiguration;
-})();
+}());
 module.exports = RouteConfiguration;
 //# sourceMappingURL=RouteConfig.js.map

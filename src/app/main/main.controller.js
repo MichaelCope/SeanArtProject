@@ -1,4 +1,5 @@
 /// <reference path="../tsd.d.ts" />
+"use strict";
 var IArtProject_1 = require('../models/IArtProject');
 var IDrawing_1 = require('../models/IDrawing');
 var dialogController_1 = require("./dialogController");
@@ -81,6 +82,6 @@ var MainController = (function () {
         '$mdMedia',
         '$mdBottomSheet'];
     return MainController;
-})();
+}());
 exports.MainController = MainController;
 //# sourceMappingURL=main.controller.js.map
