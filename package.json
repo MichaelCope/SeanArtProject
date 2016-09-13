@@ -53,7 +53,8 @@
   },
   "scripts": {
     "test": "gulp test",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "./node_modules/bower/bin/bower install",
+    "postinstall": "./node_modules/bower/bin/tsd install"
   },
   "devDependencies": {},
   "engines": {
