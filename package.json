@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "dependencies": {
     "express": "^4.14.0",
-    "gzippo": "^0.2.0"
+    "gzippo": "^0.2.0",
+    "wrench": "^1.5.9"
   },
   "scripts": {
     "test": "gulp test"
