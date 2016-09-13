@@ -5,12 +5,7 @@
     "express": "^4.14.0",
     "gzippo": "^0.2.0",
     "gulp-load-plugins": "~0.10.0",
-    "wrench": "^1.5.9"
-  },
-  "scripts": {
-    "test": "gulp test"
-  },
-  "devDependencies": {
+    "wrench": "^1.5.9",
     "estraverse": "~4.1.0",
     "gulp": "~3.9.0",
     "gulp-autoprefixer": "~3.0.2",
@@ -49,12 +44,16 @@
     "phantomjs": "~1.9.18",
     "karma-coverage": "~0.5.2",
     "karma-ng-html2js-preprocessor": "~0.2.0",
-    "browser-sync": "~2.9.11",
-    "browser-sync-spa": "~1.0.3",
     "http-proxy-middleware": "~0.9.0",
     "chalk": "~1.1.1",
-    "uglify-save-license": "~0.4.1",
-    "wrench": "~1.5.8"
+    "uglify-save-license": "~0.4.1"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "devDependencies": {
+    "browser-sync": "~2.9.11",
+    "browser-sync-spa": "~1.0.3"
   },
   "engines": {
     "node": ">=0.10.0"
