@@ -60,7 +60,7 @@ export class MainController {
         var useFullScreen = (this.$mdMedia('sm') || this.$mdMedia('xs'));
 
         this.$mdDialog.show({
-            templateUrl: '../../app/views/expandedDrawing.html',
+            templateUrl: 'app/views/expandedDrawing.html',
             parent: angular.element(document.body),
             targetEvent: $event,
             locals: { drawing: drawing },
