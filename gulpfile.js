@@ -8,7 +8,13 @@
 
 var gulp = require('gulp');
 var wrench = require('wrench');
+var ts = require('gulp-typescript');
 
+gulp.task('typescript', function() {
+  console.log('Compiling typescript');
+  return gulp.src(['server/**/*.ts'])
+      .pipe(ts({module: 'commonjs'})).js.pipe(gulp.dest('./.tmp/'))
+});
 
 /**
  *  This will load all js or coffee files in the gulp directory
