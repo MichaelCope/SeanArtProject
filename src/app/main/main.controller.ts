@@ -4,6 +4,10 @@ import IArtProject  from '../models/IArtProject';
 import IDrawing     from '../models/IDrawing';
 import {DialogController} from "./dialogController";
 
+/*
+This is a test
+ */
+
 export class MainController {
 
     public static controllerName = "MainController";
@@ -44,7 +48,7 @@ export class MainController {
 
         this.artProjects = this.populateArtProjects();
 
-        this.$log.debug('constructed');
+        this.$log.debug('constructed, test');
     }
 
     public selectProject(project: IArtProject): void {
