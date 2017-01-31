@@ -1,6 +1,6 @@
 /**
  *  Welcome to your gulpfile!
- *  The gulp tasks are splitted in several files in the gulp directory
+ *  The gulp tasks are split in several files in the gulp directory
  *  because putting all here was really too long
  */
 
@@ -31,7 +31,7 @@ wrench.readdirSyncRecursive('./gulp').filter(function(file) {
  *  Default task clean temporaries directories and launch the
  *  main optimization build task
  */
-gulp.task('default', ['clean'], function () {
+gulp.task('default', function () {
   gulp.start('build');
 });
 

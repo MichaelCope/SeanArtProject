@@ -1,8 +1,8 @@
 'use strict';
 
-var path = require('path');
-var gulp = require('gulp');
-var conf = require('./conf');
+var path        = require('path');
+var gulp        = require('gulp');
+var conf        = require('./conf');
 var runSequence = require('run-sequence');
 
 var tsd  = require('./tsd');
@@ -99,6 +99,6 @@ gulp.task('clean', function () {
 
 //gulp.task('build', ['tsd', 'html', 'fonts', 'other']);
 
-gulp.task("build", function (callback) {
+gulp.task("build", ['clean'], function (callback) {
   runSequence("tsd", ['html', 'fonts', 'other'], callback);
 });
