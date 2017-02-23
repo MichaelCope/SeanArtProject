@@ -1,23 +1,43 @@
-<md-content>
-    <div ng-if="!mainCtrl.selectedProject">
-        <h2>Please select a project</h2>
-    </div>
-    <h2>{{mainCtrl.selectedProject.projectName}}</h2>
-</md-content>
-<img class="avatar" ng-src="{{mainCtrl.selectedProject.avatarUrl}}">
-<h2>{{mainCtrl.selectedProject.createDate | date: 'MMMM, yyyy'}}</h2>
+<!--<md-content>-->
+    <!--<div ng-if="!mainCtrl.selectedProject">-->
+        <!--<h2>Please select a project</h2>-->
+    <!--</div>-->
+    <!--<h2>{{mainCtrl.selectedProject.projectName}}</h2>-->
+<!--</md-content>-->
+<!--<img class="avatar" ng-src="{{mainCtrl.selectedProject.avatarUrl}}">-->
+<!--<h2>{{mainCtrl.selectedProject.createDate | date: 'MMMM, yyyy'}}</h2>-->
 
-<p ng-if="mainCtrl.selectedProject.drawings.length < 1">No drawings for {{mainCtrl.selectedProject.projectName}}, yet.</p>
+<!--<p ng-if="mainCtrl.selectedProject.drawings.length < 1">No drawings for {{mainCtrl.selectedProject.projectName}}, yet.</p>-->
+<!--<md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>-->
+
+        <!--<md-card ng-repeat="drawing in mainCtrl.selectedProject.drawings">-->
+            <!--<md-card-content>-->
+                <!--<h3>{{drawing.title}}</h3>-->
+                <!--<img ng-src="{{drawing.url}}" class="avatar-large md-card-image">-->
+            <!--</md-card-content>-->
+            <!--<md-card-actions layout="row" layout-align="end center">-->
+                <!--<md-button ng-click="mainCtrl.expandDrawing($event, drawing)">Enlarge</md-button>-->
+            <!--</md-card-actions>-->
+        <!--</md-card>-->
+
+<!--</md-content>-->
 <md-content class="md-padding" layout-xs="column" layout="row" layout-wrap>
-
-        <md-card ng-repeat="drawing in mainCtrl.selectedProject.drawings">
-            <md-card-content>
-                <h3>{{drawing.title}}</h3>
-                <img ng-src="{{drawing.url}}" class="avatar-large md-card-image">
-            </md-card-content>
-            <md-card-actions layout="row" layout-align="end center">
-                <md-button ng-click="mainCtrl.expandDrawing($event, drawing)">Enlarge</md-button>
-            </md-card-actions>
-        </md-card>
-
-</md-content>  
+    <md-card ng-repeat="project in mainCtrl.artProjects | orderBy:'id'">
+        <md-card-content>
+            <h3>{{project.projectName}}</h3>
+            <img ng-src="{{project.avatarUrl}}" class="avatar-large md-card-image">
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="mainCtrl.expandDrawing($event, drawing)">More</md-button>
+        </md-card-actions>
+    </md-card>
+</md-content>
+<!--<md-list>-->
+    <!--<md-list-item ng-repeat="project in mainCtrl.artProjects | orderBy:'id' | filter:mainCtrl.searchText">-->
+        <!--<md-button ng-click="mainCtrl.selectProject(project)"-->
+                   <!--ng-class="{'selected': user === mainCtrl.selectedProject }">-->
+            <!--<img ng-src="{{project.avatarUrl}}" class="avatar avatar-small">-->
+            <!--{{project.projectName}}-->
+        <!--</md-button>-->
+    <!--</md-list-item>-->
+<!--</md-list>-->

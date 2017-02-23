@@ -29,7 +29,7 @@ export class MainController {
         '$log',
         '$http',
         '$timeout',
-        '$mdSidenav',
+        //'$mdSidenav',
         '$mdToast',
         '$mdDialog',
         '$mdMedia',
@@ -40,7 +40,7 @@ export class MainController {
                 private $log:ng.ILogService,
                 private $http:ng.IHttpService,
                 private $timeout:ng.ITimeoutService,
-                private $mdSidenav: ng.material.ISidenavService,
+                //private $mdSidenav: ng.material.ISidenavService,
                 private $mdToast: ng.material.IToastService,
                 private $mdDialog: ng.material.IDialogService,
                 private $mdMedia: ng.material.IMedia,
@@ -56,9 +56,9 @@ export class MainController {
         this.selectedProject = project;
     }
 
-    public toggleSideNav() : void {
-        this.$mdSidenav('left').toggle();
-    }
+    //public toggleSideNav() : void {
+    //    this.$mdSidenav('left').toggle();
+    //}
 
     public expandDrawing($event, drawing: IDrawing): void{
         var useFullScreen = (this.$mdMedia('sm') || this.$mdMedia('xs'));

@@ -33,15 +33,20 @@ html, body {
 
 md-toolbar h1 {
   color: #fff!important;
-  font-size: 1.50em;
+  font-size: 3.25em;
   font-weight: 500;
   margin: auto
 }
 
 md-toolbar .md-toolbar-tools h1 {
   color: #fff!important;
-  font-size: 1.50em;
+  font-size: 3.25em;
   font-weight: 500;
+}
+
+md-toolbar .md-toolbar-tools {
+  min-height: 80px;
+  max-height: 80px;
 }
 
 md-list .md-button {
